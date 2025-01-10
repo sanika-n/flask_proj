@@ -19,7 +19,7 @@ def home():
     url = f'https://api.nasa.gov/planetary/apod?api_key={api_key}'
     response = requests.get(url)
     data = response.json()
-    return render_template("home.html", data=data.body)
+    return render_template("home.html", explanation=data['explanation'])
 
 
     
